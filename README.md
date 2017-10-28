@@ -48,16 +48,16 @@ Assume-se que o Docker já está instalado e configurado no servidor. Para gerar
 O projeto foi implementado e testado utilizando Python 3.5.3. Para assegurar máxima compatibilidade, sugere-se o uso de um virtualenv para executar o projeto e suas dependências.
 
 Para instalar o Python3.5.3 deve-se:
-
-Para instalar o virtualenv, deve-se:
-
-Em distribuições baseadas no Debian (Ubuntu, Mint, etc) é possível utilizar o Makefile disponibilizado para criar o ambiente de desenvolvimento.
+```
+cd /tmp && wget https://www.python.org/ftp/python/3.5.3/Python-3.5.3.tar.xz && tar xvf Python-3.5.3.tar.xz && cd Python-3.5.3
+./configure
+make -j4
+sudo make altinstall
+```
 
 Dependências do Python3 estão listadas no arquivo "requirements" e podem ser instaladas usando o `python3 -m pip install -r requirements` ou o Makefile, como explicado abaixo.
 
 ## Basic usage:
-
-#### make env
 
 #### make deps
 Instala todas as dependências listadas no arquivo requirements para execução do projeto. Note que, idealmente, esse comando deve ser executado dentro do ambiente virtual para evitar problemas de versionamento em outros projetos.
@@ -72,6 +72,7 @@ Executa testes automatizados.
 Removes .pyc cache files.
 
 ## TODO
+* Instruções de como criar um virtualenv;
 * Caso seja de interesse, seria possível disponibilizar este log externamente no futuro;
 * Aumentar cobertura de testes;
 * Pensar e decidir qual melhor banco de dados a ser usado em nossos sistema e como/onde disponibilizá-lo.
