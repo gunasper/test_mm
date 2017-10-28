@@ -1,4 +1,4 @@
-pyenv = python3
+pyenv = python3.5
 
 run: 
 	$(pyenv) max_milhas/app.py

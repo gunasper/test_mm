@@ -37,11 +37,9 @@ Devido ao prazo, não foi criada uma estensa rotina de testes. Entretanto, foi d
 Ao ser inicializado, um arquivo chamado max.log é criado no diretório raiz, contendo o Log da aplicação.
 
 #### Docker
-O repositório contendo o projeto está marcado como privado no BitBucket devido a questões de privacidade do autor. Porém, através da chave SSH disponível em conf/ssh é possível baixá-lo sem se preocupar em pedir permissões para o dono do repositório. Caso haja necessidade, é possível torná-lo.
-
-Para acessá-lo, deve-se colocar a chave SSH em...
-
-Assume-se que o Docker já está instalado e configurado no servidor. Para gerar imagem e container, respectivamente, deve-se usar os seguintes comandos:
+Para gerar imagem e container, respectivamente, deve-se usar os seguintes comandos:
+sudo docker build --rm -t mmimage . --build-arg build=123
+sudo docker rm -f mmcontainer; sudo docker run -e LANG=C.UTF-8 -p 5000:5000 --name="mmcontainer" -d mmimage;
 
 
 ## Dependências
