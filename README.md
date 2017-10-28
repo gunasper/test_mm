@@ -3,7 +3,7 @@
 Este teste tem como objetivo demonstrar habilidades do candidato com Python3, desenvolvimento de APIS RESTful, boas práticas de desenvolvimento, conhecimentos em banco de dados, etc.
 Para simplificar processos de instalação e deploy, foi criado um makefile contendo os comandos que devem ser utilizados para criação do ambiente de desenvolvimento e/ou produção.
 
-Este arquivo README está separado em X sessões, a saber: Decisões de Projeto, Dependências, Makefile.
+Este arquivo README está separado em 4 sessões, a saber: Decisões de Projeto, Dependências, Makefile, TODO.
 
 ## Decisões de Projeto
 Embora a descrição da vaga sugira que a MaxMilhas use Django como principal framework, este é um framework síncrono. Para torná-lo assíncrono, pode-se usar a biblioteca Celery para tarefas assíncronas. Entretanto, existe um web framework Python nativamente assíncrono chamado Tornado http://www.tornadoweb.org/en/stable/. O Tornado foi desenvolvido para contornar o problema C10k https://en.wikipedia.org/wiki/C10k_problem, que envolve lidar e escalonar 10 mil conexões simultâneas. Embora 10 mil conexões não seja o mesmo que 10 mil requisições por segundo, comparado ao Django, o Tornado consegue lidar muito mais rapidamente com entrega de conteúdo, principalmente para requisições RESTful envolvendo IO. O seguinte comparativo corrobora as informações acima: http://klen.github.io/py-frameworks-bench/.
@@ -17,7 +17,7 @@ Devido ao prazo ser critério de exclusão, não está sendo entregue uma interf
 #### Estrutura do Projeto
 O projeto está estruturado em 4 pastas principais: conf, docs, max_milhas, scripts. Cada pasta possui um README apropriado explicando suas funcionalidades.
 
-> A pasta max_milhas contém o projeto em si e é dividida em 4 subpastas: 
+> A pasta max_milhas contém o projeto em si e é dividida em 5 subpastas: 
 * commons
 * handlers
 * models
@@ -57,11 +57,11 @@ cd /tmp && wget https://www.python.org/ftp/python/3.5.3/Python-3.5.3.tar.xz && t
 make -j4
 sudo make altinstall
 ```
-Dependências do Python3.5 estão listadas no arquivo "requirements" e podem ser instaladas usando o `python3 -m pip install -r requirements` ou o Makefile, como explicado abaixo.
+Dependências do Python3.5 estão listadas no arquivo "requirements" e podem ser instaladas usando o `python3.5 -m pip install -r requirements` ou o Makefile, como explicado abaixo.
 
 Idealmente, usa-se um ambiente virtual (virtualenv) Python para executar o projeto, a fim de maximizar a compatibilidade.
 
-## Basic usage:
+## Makefile:
 
 #### make deps
 Instala todas as dependências listadas no arquivo requirements para execução do projeto. Note que, idealmente, esse comando deve ser executado dentro do ambiente virtual para evitar problemas de versionamento em outros projetos.
