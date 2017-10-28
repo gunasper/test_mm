@@ -44,11 +44,13 @@ Ao ser inicializado, um arquivo chamado max.log é criado no diretório raiz, co
 
 #### Docker
 Para gerar imagem e container, respectivamente, deve-se usar os seguintes comandos:
-sudo docker build --rm -t mmimage . --build-arg build=123
-sudo docker rm -f mmcontainer; sudo docker run -e LANG=C.UTF-8 -p 5000:5000 --name="mmcontainer" -d mmimage;
+
+`sudo docker build --rm -t mmimage . --build-arg build=123`
+
+`sudo docker rm -f mmcontainer; sudo docker run -e LANG=C.UTF-8 -p 5000:5000 --name="mmcontainer" -d mmimage;`
 
 ## Dependências
-O projeto foi implementado e testado utilizando Python 3.5.3. Para assegurar máxima compatibilidade, sugere-se o uso de um virtualenv para executar o projeto e suas dependências.
+O projeto foi implementado e testado utilizando Python 3.5.3. Para assegurar máxima compatibilidade, sugere-se fortemente o uso de um virtualenv para executar o projeto e suas dependências.
 
 Para instalar o Python3.5.3 deve-se:
 ```
@@ -58,8 +60,6 @@ make -j4
 sudo make altinstall
 ```
 Dependências do Python3.5 estão listadas no arquivo "requirements" e podem ser instaladas usando o `python3.5 -m pip install -r requirements` ou o Makefile, como explicado abaixo.
-
-Idealmente, usa-se um ambiente virtual (virtualenv) Python para executar o projeto, a fim de maximizar a compatibilidade.
 
 ## Makefile:
 
