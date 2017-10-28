@@ -1,6 +1,6 @@
+import datetime
 from commons.sql_class import SQLMaxMilhas
 from commons.cpf_validator import CPFValidator
-import datetime
 
 class CPFModel():
     table = "Cpfs"
